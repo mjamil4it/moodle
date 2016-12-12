@@ -274,7 +274,7 @@ class mod_feedback_completion extends mod_feedback_structure {
         foreach ($pages as $pageidx => $pageitems) {
             foreach ($pageitems as $item) {
                 if ($item->hasvalue) {
-                    if ($this->get_values_tmp($item) !== null) {
+                    if ($this->get_values_tmp($item) !== null || $item->required == 0) {
                         $completed[$pageidx] = true;
                     } else {
                         $incompleted[$pageidx] = true;
